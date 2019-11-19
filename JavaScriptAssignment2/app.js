@@ -7,8 +7,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Making my URL routes for my webpages
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var listings = require('./routes/listings');
+var home = require('./routes/home');
+var register = require('./routes/register');
+var login = require('./routes/login');
+var add = require('./routes/add');
 
 var app = express();
 
@@ -24,8 +30,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Creating the routes for all my webpages
 app.use('/', routes);
 app.use('/users', users);
+app.use('/listings', listings);
+app.use('/home', home);
+app.use('/register', register);
+app.use('/login', login);
+app.use('/add', add);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
