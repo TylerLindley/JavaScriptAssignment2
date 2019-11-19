@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="routes\register.js" />
+    <Content Include="routes\login.js" />
+    <Content Include="routes\add.js" />
     <Content Include="routes\home.js" />
     <Content Include="routes\listings.js" />
     <Content Include="routes\index.js" />
@@ -37,6 +40,9 @@
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
+    <Content Include="views\add.pug" />
+    <Content Include="views\register.pug" />
+    <Content Include="views\login.pug" />
     <Content Include="views\home.pug" />
     <Content Include="views\listings.pug" />
     <Content Include="views\index.pug" />
