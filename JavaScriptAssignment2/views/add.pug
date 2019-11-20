@@ -1,16 +1,12 @@
 extends layout
 
 block content
-
- //Adding items page
- //Let's the user add the item's they wish to sell on the marketplace.
-
  a(href='/listings' title='List Listing') List Listings
  h1 Add A New Listing
   form(method='post' action='/listings/add')
     div
-        label Title
-        input(name='title' required placeholder='Title')
+        label Name
+        input(name='name' required placeholder='Name')
     div
         label Description
         input(name='description' required placeholder='Description')

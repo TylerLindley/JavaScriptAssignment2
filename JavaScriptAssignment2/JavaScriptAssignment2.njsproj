@@ -43,6 +43,8 @@
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
+    <Content Include="views\edit.pug" />
+    <Content Include="views\added.pug" />
     <Content Include="views\add.pug" />
     <Content Include="views\footer.pug" />
     <Content Include="views\header.pug" />

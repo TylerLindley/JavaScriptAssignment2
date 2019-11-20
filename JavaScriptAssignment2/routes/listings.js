@@ -5,7 +5,7 @@ var Listing = require('../model/listings');
 
 /* GET the home page */
 router.get('/', function (req, res) {
-    res.render('listings', { title: 'Express' });
+    res.render('index', { title: 'Express' });
 });
 
 //Get all listings
@@ -26,13 +26,13 @@ router.post('listings/add', function (req, res) {
     Listing.create({
         name: req.body.name,
         description: req.body.description,
-        location: req.body.decription,
+        location: req.body.location,
         price: req.body.price
     }, function (err, Listing) {
         if (err) console.log(err);
         else {
             console.log('Listing Added: ' + Listing);
-            res.render('Added!', { listing: Listing.title });
+            res.render('added', { listing: Listing.title });
         }
     });
 });
@@ -50,11 +50,11 @@ router.get('/listings/delete/:id', function (req, res) {
     });
 });
 
-//Edit A Product Page
+//Edit A Listing
 router.get('/listings/edit/:id', function (req, res) {
     var id = req.params.id;
 
-    Product.findById(id, function (err, product) {
+    Listing.findById(id, function (err, listing) {
         if (err)
             res.send('Listing : ' + id + 'not found!');
         else
@@ -62,12 +62,12 @@ router.get('/listings/edit/:id', function (req, res) {
     });
 });
 
-//Edit a product and save to DB
+//Edit a listing and save to DB
 router.post('/listings/edit', function (req, res) {
     var id = req.body.id;
     var editedListing = {
         _id: id,
-        name: req.body.title,
+        name: req.body.name,
         description: req.body.description,
         location: req.body.location,
         price: req.body.price

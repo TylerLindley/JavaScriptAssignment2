@@ -1,0 +1,21 @@
+extends layout
+
+block content
+ a(href='/listings' title='List Listings') List Listings
+ h1 Edit Listing
+  form(method='post' action='/listings/edit')
+    div
+        label Name
+        input(name='name' required placeholder='Name' value=listing.name)
+    div
+        label Description
+        input(name='description' required placeholder='Description' value=listing.description)
+    div
+        label Location
+        input(name='location' required placeholder='Location' value=listing.location)
+    div
+        label Price
+        input(name='price' required placeholder='Price' type='number' value=listing.price)
+        input(name='id' type='hidden' value=listing.id)
+    input(type='submit' value='Edit and Save Listing')
+ include footer.pug

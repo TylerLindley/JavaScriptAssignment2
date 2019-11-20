@@ -1,12 +1,28 @@
 extends layout
 
 block content
-            include header.pug
-                
-            //This page will show all the listings 
-            //If the user has a listing, they can edit/delete theirs, or can view other peoples listings.
-
-            h1 These are the current listings, click on them to open and get more information!
-            h3 If you have items listed, you can Edit them (Price/Name/etc.) , or delete them if you have sold them or no longer want to sell.
-            
-            include footer.pug
+ include header.pug
+ a(href='/listings' title='List Listings') List Listings
+ h1 Listings
+ table
+    thead
+        th Name
+        th Description
+        th Location
+        th Price
+        th Edit
+        th Delete
+    tbody
+        each listing in allListings
+            tr
+                td #{listing.name}
+                td #{listing.description}
+                td #{listing.location}
+                td #{listing.price}
+                td
+                    a(href="/listings/edit/"+listing._id)
+                        |Edit
+                td
+                    a(href="/listings/delete/"+listing._id title="Delete" onclick="return confirm(\'Are you sure you want to delete this listing?\');")
+                        |Delete
+ include footer.pug

@@ -9,18 +9,17 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var session = require('express-session');
 
-mongoose.connect('mongodb://localhost/Assignment2');
+mongoose.connect('mongodb://localhost/assignment2');
 
 //Making my URL routes for my webpages
-var routes = require('./routes/index');
 var users = require('./routes/users');
 var listings = require('./routes/listings');
 var home = require('./routes/home');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var add = require('./routes/add');
+var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 var app = express();
@@ -51,7 +50,7 @@ app.use('/', listings);
 app.use('/home', home);
 app.use('/register', register);
 app.use('/login', login);
-app.use('/add', add);
+
 
 //Serialize user
 passport.serializeUser(function (user, done) {
