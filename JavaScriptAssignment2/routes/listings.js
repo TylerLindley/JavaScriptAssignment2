@@ -22,7 +22,7 @@ router.get('/listings/add', function (req, res) {
 });
 
 //Add a listing to DB
-router.post('listings/add', function (req, res) {
+router.post('/listings/add', function (req, res) {
     Listing.create({
         name: req.body.name,
         description: req.body.description,
