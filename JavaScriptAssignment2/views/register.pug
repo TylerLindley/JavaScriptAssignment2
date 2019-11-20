@@ -2,13 +2,10 @@ extends layout
 
 block content
             
+            include header.pug
+
             //Page will let the user create an account and store it to the database when it is completed in part 2.
             h1 Register an Account!
             h2 Would you like to create an account to list items on our site?
 
-            //Creating a footer for all of my pages
-            h2 <a href="./home">Home </>
-            h2 <a href="./listings">Listings </>
-            h2 <a href="./add"> Add an Item </>
-            h2 <a href="./login"> Login </>
-            h2 <a href="./register"> Register </>
+            include footer.pug
