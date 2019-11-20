@@ -1,13 +1,11 @@
 extends layout
 
 block content
+
+            include header.pug
+
             //Page will let the user enter their email (username) and password, if it matches the database, user will be logged in
             //Depending on which user, they can upload a listing or edit their own listing.
-            h1 Please enter your email and password
+            h1 Please enter your email and password 
 
-            //Creating a footer for all of my pages
-            h2 <a href="./home">Home </>
-            h2 <a href="./listings">Listings </>
-            h2 <a href="./add"> Add an Item </>
-            h2 <a href="./login"> Login </>
-            h2 <a href="./register"> Register </>
+            include footer.pug
