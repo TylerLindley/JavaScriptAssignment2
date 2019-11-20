@@ -1,11 +1,23 @@
 extends layout
 
 block content
-            include header.pug
 
-            //Adding items page
-            //Let's the user add the item's they wish to sell on the marketplace.
-            h1 Add the Item you wish to sell
+ //Adding items page
+ //Let's the user add the item's they wish to sell on the marketplace.
 
-            //Creating a footer for all of my pages
-            include footer.pug
+ a(href='/listings' title='List Listing') List Listings
+ h1 Add A New Listing
+  form(method='post' action='/listings/add')
+    div
+        label Title
+        input(name='title' required placeholder='Title')
+    div
+        label Description
+        input(name='description' required placeholder='Description')
+    div
+        label Location
+        input(name='location' required placeholder='Location')
+    div
+        label Price
+        input(name='price' required placeholder='Price' type='number')
+    input(type='submit' value='Add Listing')

@@ -6,6 +6,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var session = require('express-session');
+
+mongoose.connect('mongodb://localhost/Assignment2');
 
 //Making my URL routes for my webpages
 var routes = require('./routes/index');
@@ -15,6 +21,7 @@ var home = require('./routes/home');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var add = require('./routes/add');
+const MongoStore = require('connect-mongo')(session);
 
 var app = express();
 
@@ -29,15 +36,57 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// required for passport session
+app.use(session({
+    secret: 'secrettexthere',
+    saveUninitialized: true,
+    resave: true
+}));
 
 //Creating the routes for all my webpages
-app.use('/', routes);
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/users', users);
-app.use('/listings', listings);
+app.use('/', listings);
 app.use('/home', home);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/add', add);
+
+//Serialize user
+passport.serializeUser(function (user, done) {
+    done(null, user.id)
+});
+
+//Deserialize user try to find username
+passport.deserializeUser(function (id, done) {
+    Account.findById(id, function (err, user) {
+        done(err, user);
+    });
+});
+
+//Local strategy used for logging users
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+        Account.findOne({
+            username: username
+        }, function (err, user) {
+            if (err) {
+                return done(err);
+            }
+
+            if (!user) {
+                return done(null, false);
+            }
+
+            if (user.password != password) {
+                return done(null, false);
+            }
+            return done(null, user);
+        });
+    }
+));
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
