@@ -10,7 +10,11 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-mongoose.connect('mongodb://localhost/assignment2');
+var app = express();
+
+var db = mongoose.connect(url).catch((error) => {
+    console.log(error);
+});
 
 //Making my URL routes for my webpages
 var users = require('./routes/users');
@@ -21,8 +25,6 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
