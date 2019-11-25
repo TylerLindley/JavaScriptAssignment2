@@ -12,9 +12,18 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
-const url = "mongodb+srv://**user**:**password**@cluster0-dxtpg.mongodb.net/test?retryWrites=true&w=majority";
 
-var db = mongoose.connect(url).catch((error) => {
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Tyler:1234@cluster0-avfjg.azure.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+});
+
+
+var db = mongoose.connect(uri).catch((error) => {
     console.log(error);
 });
 
