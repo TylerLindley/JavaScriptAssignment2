@@ -12,6 +12,8 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
+const url = "mongodb+srv://**user**:**password**@cluster0-dxtpg.mongodb.net/test?retryWrites=true&w=majority";
+
 var db = mongoose.connect(url).catch((error) => {
     console.log(error);
 });

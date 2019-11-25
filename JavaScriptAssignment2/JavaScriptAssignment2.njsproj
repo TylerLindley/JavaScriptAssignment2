@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="config\db.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="model\listings.js">
       <SubType>Code</SubType>
     </Content>
@@ -58,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="model\" />
+    <Folder Include="config\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
