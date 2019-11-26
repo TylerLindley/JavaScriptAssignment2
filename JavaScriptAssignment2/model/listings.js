@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose');
 
-var ListSchema = new mongoose.Schema(
+var ListingSchema = new mongoose.Schema(
     {
         name: String,
         description: String,
@@ -9,4 +9,4 @@ var ListSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('List', ListSchema);
+module.exports = mongoose.model('Listing', ListingSchema);
