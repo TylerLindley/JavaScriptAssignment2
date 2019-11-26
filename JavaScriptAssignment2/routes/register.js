@@ -18,11 +18,10 @@ router.post('/', function (req, res) {
         if (err) console.log(err);
         else {
             console.log('Account added : ' + Account);
-            res.redirect('/login');
+            res.redirect('/listings');
         }
     });
 });
-
 
 
 module.exports = router;

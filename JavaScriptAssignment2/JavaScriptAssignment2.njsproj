@@ -54,6 +54,9 @@
     <Content Include="public\stylesheets\_variables.scss">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="routes\google_key.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\register.js" />
     <Content Include="routes\login.js" />
     <Content Include="routes\add.js" />

@@ -85,6 +85,7 @@ router.get('/', isLoggedIn, function (req, res) {
     res.render('listings');
 });
 
+//Is the user logged in?
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
