@@ -1,10 +1,18 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
-/* GET Login Page (Authenticate they have an account via database */
+/* GET login page. */
 router.get('/', function (req, res) {
-    res.render('login', { title: 'Express' });
+    res.render('login');
 });
+
+//Try to login with passport
+router.post('/', passport.authenticate('local', {
+    successRedirect: '/listings',
+    failureRedirect: '/login',
+    failureMessage: 'Invalid Login'
+}));
 
 module.exports = router;

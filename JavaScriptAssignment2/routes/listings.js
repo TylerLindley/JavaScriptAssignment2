@@ -81,5 +81,15 @@ router.post('/listings/edit', function (req, res) {
     });
 });
 
+router.get('/', isLoggedIn, function (req, res) {
+    res.render('listings');
+});
 
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    console.log('Not authenticated!');
+    res.redirect('/login');
+}
 module.exports = router;
