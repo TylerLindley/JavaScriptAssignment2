@@ -69,7 +69,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #333;
-    text-align: center
+    Text-Align: Right;
     background-color: #fff;
 }
 
@@ -223,7 +223,7 @@ caption {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     color: #868e96;
-    text-align: center
+    Text-Align: Right;
     caption-side: bottom;
 }
 
@@ -2731,7 +2731,7 @@ textarea.form-control {
     display: inline-block;
     font-weight: 400;
     color: #333;
-    text-align: center;
+    Text-Align: Right;;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -3460,7 +3460,7 @@ input[type="button"].btn-block {
     margin: 0.125rem 0 0;
     font-size: 1rem;
     color: #333;
-    text-align: center
+    Text-Align: Right;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
@@ -3941,7 +3941,7 @@ input[type="button"].btn-block {
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    text-align: center;
+    Text-Align: Right;;
     white-space: nowrap;
     background-color: #e9ecef;
     border: 1px solid #ced4da;
@@ -4564,7 +4564,7 @@ input[type="button"].btn-block {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    text-align: center;
+    Text-Align: Right;;
 }
 
 .nav-justified .nav-item {
@@ -4573,7 +4573,7 @@ input[type="button"].btn-block {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    text-align: center;
+    Text-Align: Right;;
 }
 
 .tab-content > .tab-pane {
@@ -5466,7 +5466,7 @@ input[type="button"].btn-block {
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
-    text-align: center;
+    Text-Align: Right;;
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
@@ -5832,7 +5832,7 @@ a.badge-dark:focus, a.badge-dark.focus {
     -ms-flex-pack: center;
     justify-content: center;
     color: #fff;
-    text-align: center;
+    Text-Align: Right;;
     white-space: nowrap;
     background-color: #E95420;
     -webkit-transition: width 0.6s ease;
@@ -6560,7 +6560,7 @@ a.close.disabled {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: center
+    Text-Align: Right;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -6657,7 +6657,7 @@ a.close.disabled {
     max-width: 200px;
     padding: 0.25rem 0.5rem;
     color: #fff;
-    text-align: center;
+    Text-Align: Right;;
     background-color: #000;
     border-radius: 0.25rem;
 }
@@ -6673,7 +6673,7 @@ a.close.disabled {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: center
+    Text-Align: Right;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -6931,7 +6931,7 @@ a.close.disabled {
     justify-content: center;
     width: 15%;
     color: #fff;
-    text-align: center;
+    Text-Align: Right;;
     opacity: 0.5;
     -webkit-transition: opacity 0.15s ease;
     transition: opacity 0.15s ease;
@@ -7037,7 +7037,7 @@ a.close.disabled {
     padding-top: 20px;
     padding-bottom: 20px;
     color: #fff;
-    text-align: center;
+    Text-Align: Right;;
 }
 
 @-webkit-keyframes spinner-border {
@@ -11037,7 +11037,7 @@ button.bg-dark:focus {
 }
 
 .text-center {
-    text-align: center !important;
+    Text-Align: Right; !important;
 }
 
 @media (min-width: 576px) {
@@ -11050,7 +11050,7 @@ button.bg-dark:focus {
     }
 
     .text-sm-center {
-        text-align: center !important;
+        Text-Align: Right; !important;
     }
 }
 
@@ -11064,7 +11064,7 @@ button.bg-dark:focus {
     }
 
     .text-md-center {
-        text-align: center !important;
+        Text-Align: Right; !important;
     }
 }
 
@@ -11078,7 +11078,7 @@ button.bg-dark:focus {
     }
 
     .text-lg-center {
-        text-align: center !important;
+        Text-Align: Right; !important;
     }
 }
 
@@ -11092,7 +11092,7 @@ button.bg-dark:focus {
     }
 
     .text-xl-center {
-        text-align: center !important;
+        Text-Align: Right; !important;
     }
 }
 

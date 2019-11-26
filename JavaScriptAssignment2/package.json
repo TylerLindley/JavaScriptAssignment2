@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node server.js"
   },
   "description": "JavaScriptAssignment2",
   "author": {
-    "name": ""
+    "name": "Tyler Lindley"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
+    "cjs": "0.0.11",
     "connect-mongo": "^3.1.2",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",

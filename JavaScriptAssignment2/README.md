@@ -6,7 +6,7 @@ If they are logged in they will be able to edit theirs, or delete the listing if
 I will use authentication to ensure that the user is the owner of the listing to edit and delete. 
 Otherwise, they will only be able to read other peoples listings.
 
-Using the CSS Frameworks from https://getbootstrap.com/ and https://bootswatch.com 
+Using the CSS Frameworks from https://getbootstrap.com/ and https://bootswatch.com and I made some myself aswell.
 
 
 
