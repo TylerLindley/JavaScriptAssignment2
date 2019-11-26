@@ -4,12 +4,12 @@ var router = express.Router();
 var Listing = require('../model/listings');
 
 /* GET the home page */
-router.get('/', isLoggedIn, function (req, res) {
+router.get('/', function (req, res) {
     res.render('index', { title: 'Express' });
 });
 
 //Get all listings
-router.get('/listings', isLoggedIn, function (req, res) {
+router.get('/listings', function (req, res) {
     Listing.find(function (err, listings) {
         if (err) console.log(err);
         else res.render('listings', { allListings: listings });
@@ -17,7 +17,7 @@ router.get('/listings', isLoggedIn, function (req, res) {
 });
 
 /* GET listings page (Item marketplace) */
-router.get('/listings/add', isLoggedIn, function (req, res) {
+router.get('/listings/add', function (req, res) {
     res.render('add');
 });
 

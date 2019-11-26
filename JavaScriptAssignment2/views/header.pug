@@ -4,15 +4,23 @@ html
     title= title
     //Using the CSS Frameworks from https://getbootstrap.com/ and https://bootswatch.com 
     link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/_variables.scss')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootswatch.scss')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    //link(href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css", rel="stylesheet", integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu", crossorigin="anonymous")
+
   body
     block content
         h2
-            a(href="./home") Home 
+            
+            a(href="./home") [Home] 
                      
-            a(href="./listings") Add/Edit Listings                                                   
+            a(href="./listings") [View Listings]                                                                                                           
          
-            a(href="./listings/add") Add an Item                                                         
+            a(href="./login") [Login]                                                                         
          
-            a(href="./login") Login                                                                         
-         
-            a(href="./register") Register                                                       
+            a(href="./register") [Register]
+            
+            

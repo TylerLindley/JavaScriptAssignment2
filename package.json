@@ -19,6 +19,8 @@
   "homepage": "https://github.com/TylerPitik/JavaScriptAssignment2#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.3.1",
+    "bootswatch": "git+https://git@github.com/thomaspark/bootswatch.git#95a134434fd0955182e9a938b5e50624e8e143c6",
     "connect-flash": "^0.1.1",
     "ejs-layouts": "0.0.1",
     "express": "^4.17.1",
