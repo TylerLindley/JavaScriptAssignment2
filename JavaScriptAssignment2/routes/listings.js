@@ -4,12 +4,12 @@ var router = express.Router();
 var Listing = require('../model/listings');
 
 /* GET the home page */
-router.get('/', function (req, res) {
+router.get('/', isLoggedIn, function (req, res) {
     res.render('index', { title: 'Express' });
 });
 
 //Get all listings
-router.get('/listings', function (req, res) {
+router.get('/listings', isLoggedIn, function (req, res) {
     Listing.find(function (err, listings) {
         if (err) console.log(err);
         else res.render('listings', { allListings: listings });
@@ -17,12 +17,12 @@ router.get('/listings', function (req, res) {
 });
 
 /* GET listings page (Item marketplace) */
-router.get('/listings/add', function (req, res) {
+router.get('/listings/add', isLoggedIn, function (req, res) {
     res.render('add');
 });
 
 //Add a listing to DB
-router.post('/listings/add', function (req, res) {
+router.post('/listings/add', isLoggedIn, function (req, res) {
     Listing.create({
         name: req.body.name,
         description: req.body.description,
@@ -38,10 +38,10 @@ router.post('/listings/add', function (req, res) {
 });
 
 //Delete a Listing
-router.get('/listings/delete/:id', function (req, res) {
+router.get('/listings/delete/:id', isLoggedIn, function (req, res) {
     var id = req.params.id;
 
-    Listing.deleteOne({ _id: id }, function (err) {
+    Listing.deleteOne({ _id: id }, isLoggedIn, function (err) {
         console.log(id);
         if (err)
             console.log('Listing : ' + id + 'not found!');
@@ -51,7 +51,7 @@ router.get('/listings/delete/:id', function (req, res) {
 });
 
 //Edit A Listing
-router.get('/listings/edit/:id', function (req, res) {
+router.get('/listings/edit/:id', isLoggedIn, function (req, res) {
     var id = req.params.id;
 
     Listing.findById(id, function (err, listing) {
@@ -63,7 +63,7 @@ router.get('/listings/edit/:id', function (req, res) {
 });
 
 //Edit a listing and save to DB
-router.post('/listings/edit', function (req, res) {
+router.post('/listings/edit', isLoggedIn, function (req, res) {
     var id = req.body.id;
     var editedListing = {
         _id: id,
