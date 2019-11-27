@@ -14,7 +14,7 @@ router.get('/listings', function (req, res) {
         if (err) console.log(err);
         else res.render('listings', { allListings: listings });
     });
-});
+});           //Users can see the page if they are not logged in, but they cannot add/edit or delete until they log in.
 
 /* GET listings page (Item marketplace) */
 router.get('/listings/add', function (req, res) {
@@ -34,7 +34,7 @@ router.post('/listings/add', isLoggedIn, function (req, res) {
             console.log('Listing Added: ' + Listing);
             res.render('added', { listing: Listing.title });
         }
-    });
+    }); //Users can see the page if they are not logged in, but they cannot add/edit or delete until they log in.
 });
 
 //Delete a Listing
@@ -48,7 +48,7 @@ router.get('/listings/delete/:id', isLoggedIn, function (req, res) {
         else
             res.redirect('/listings');
     });
-});
+}); //Users can see the page if they are not logged in, but they cannot add/edit or delete until they log in.
 
 //Edit A Listing
 router.get('/listings/edit/:id', isLoggedIn, function (req, res) {
@@ -90,7 +90,7 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    console.log('Not authenticated!');
+    console.log('Not authenticated!'); 
     res.redirect('/login');
 }
 module.exports = router;

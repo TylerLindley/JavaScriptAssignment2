@@ -9,7 +9,7 @@ router.get('/', isLoggedIn, function (req, res) {
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
-        return next();
+        return next(); //If the user is not logged in, they cannot add to my database.
     }
     console.log('Not authenticated!');
     res.redirect('/login');

@@ -18,7 +18,7 @@ router.post('/', function (req, res) {
         if (err) console.log(err);
         else {
             console.log('Account added : ' + Account);
-            res.redirect('/login');
+            res.redirect('/login'); //Create an account, if created, send users to the login page.
         }
     });
 });

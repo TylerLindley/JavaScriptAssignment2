@@ -10,9 +10,9 @@ router.get('/', function (req, res) {
 
 //Try to login with passport
 router.post('/', passport.authenticate('local', {
-    successRedirect: '/listings',
-    failureRedirect: '/login',
-    failureMessage: 'Invalid Login'
+    successRedirect: '/listings', //Redirect to listings page
+    failureRedirect: '/login', //reload the login and try again
+    failureMessage: 'Invalid Login' 
 }));
 
 module.exports = router;
