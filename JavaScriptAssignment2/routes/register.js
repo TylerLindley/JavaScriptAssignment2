@@ -18,7 +18,7 @@ router.post('/', function (req, res) {
         if (err) console.log(err);
         else {
             console.log('Account added : ' + Account);
-            res.redirect('/listings');
+            res.redirect('/login');
         }
     });
 });

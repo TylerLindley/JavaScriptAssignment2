@@ -41,7 +41,7 @@ router.post('/listings/add', isLoggedIn, function (req, res) {
 router.get('/listings/delete/:id', isLoggedIn, function (req, res) {
     var id = req.params.id;
 
-    Listing.deleteOne({ _id: id }, isLoggedIn, function (err) {
+    Listing.deleteOne({ _id: id }, function (err) {
         console.log(id);
         if (err)
             console.log('Listing : ' + id + 'not found!');

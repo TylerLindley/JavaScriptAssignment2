@@ -53,8 +53,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // required for passport session
 app.use(session({
     secret: 'secrettexthere',
-    saveUninitialized: true,
-    resave: true
+    saveUninitialized: false,
+    resave: false
 }));
 
 //Creating the routes for all my webpages
