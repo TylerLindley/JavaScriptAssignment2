@@ -23,7 +23,7 @@
     "bootswatch": "git+https://git@github.com/thomaspark/bootswatch.git#95a134434fd0955182e9a938b5e50624e8e143c6",
     "connect-flash": "^0.1.1",
     "ejs-layouts": "0.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.12",
     "passport": "^0.4.0",
